@@ -41,7 +41,8 @@ class _VisitStoreScreenState extends State<VisitStoreScreen> {
   }
 
   subscribeToTopic() async {
-    await FirebaseMessaging.instance.subscribeToTopic('topic');
+    await FirebaseMessaging.instance
+        .subscribeToTopic('${widget.supplierId}store');
     String customerId = FirebaseFirestore.instance
         .collection("customers")
         .doc(FirebaseAuth.instance.currentUser!.uid)
@@ -58,7 +59,8 @@ class _VisitStoreScreenState extends State<VisitStoreScreen> {
   }
 
   unsubscibeFromTopic() async {
-    await FirebaseMessaging.instance.subscribeToTopic('topic');
+    await FirebaseMessaging.instance
+        .subscribeToTopic('${widget.supplierId}store');
     String customerId = FirebaseFirestore.instance
         .collection("customers")
         .doc(FirebaseAuth.instance.currentUser!.uid)

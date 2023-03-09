@@ -59,12 +59,12 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
   }
 
   void _handleMessage(RemoteMessage message) {
-    if (message.data['type'] == 'store') {
+    if (message.data['type'] == 'followers') {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const VisitStoreScreen(
-              supplierId: "VR4GjQge4UQ8BrAWPer3jaj9nYs2"),
+          builder: (context) =>
+              VisitStoreScreen(supplierId: message.data['supplierId']),
         ),
       );
     }
